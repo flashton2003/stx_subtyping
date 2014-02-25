@@ -1,10 +1,10 @@
 from Bio import SeqIO
 from Bio.Seq import Seq
-'''
 
-inhandle = '/Volumes/NGS2_DataRAID/projects/tim/vtec_grant/stx_subtyping/stx2c_whole_genes.fa'
+
+inhandle = '/Volumes/NGS2_DataRAID/projects/tim/vtec_grant/stx_subtyping/stx2a_whole_genes.fa'
 fasta_input = open(inhandle, 'r')
-fasta_output = open('/Volumes/NGS2_DataRAID/projects/tim/vtec_grant/stx_subtyping/stx2c_variant_positions.fa', 'w')
+fasta_output = open('/Volumes/NGS2_DataRAID/projects/tim/vtec_grant/stx_subtyping/stx2a_variant_positions.fa', 'w')
 
 seq_dict = {}
 
@@ -26,7 +26,7 @@ for each in seq_dict:
 	if len(set(seq_dict[each])) > 1:
 		keep_list.append(each)
 
-#print keep_list
+print keep_list
 print len(keep_list)
 
 fasta_input.close()
