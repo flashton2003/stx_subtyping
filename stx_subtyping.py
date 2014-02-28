@@ -22,7 +22,7 @@ def get_opts():
 def make_output_dir(output_root):
 	if not os.path.isdir(output_root):
 		system ('mkdir %s' % output_root)
-	if not os.path.isdir('%s/tmp'):
+	if not os.path.isdir('%s/tmp' % output_root):
 		system ('mkdir %s/tmp' % output_root)
 
 def get_scripts_dir():
@@ -42,6 +42,12 @@ def run_MapSNP(fastq_read1, fastq_read2, output_root):
 	system ('python %s/run_MapSNP.py %s %s %s %s' % (scripts_dir, fastq_read1, fastq_read2, output_root, ref))
 	
 
+def run_AssBLAST(contigs, output_root):
+	scripts_dir = get_scripts_dir()
+	ref = get_ref_fasta()
+	print '### START:' + str(datetime.time(datetime.now())).split('.')[0]
+	print '###  Running AssBLAST workflow...' + str(datetime.time(datetime.now())).split('.')[0]
+	system ('python %s/run_AssBLAST.py %s %s %s' % (scripts_dir, contigs, output_root, ref))
 
 
 
@@ -51,4 +57,5 @@ def run_MapSNP(fastq_read1, fastq_read2, output_root):
 
 fastq_read1, fastq_read2, contigs, output_root = get_opts()
 make_output_dir(output_root)
-run_MapSNP(fastq_read1, fastq_read2, output_root)
+#run_MapSNP(fastq_read1, fastq_read2, output_root)
+run_AssBLAST(contigs, output_root)
