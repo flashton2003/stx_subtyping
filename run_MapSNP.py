@@ -105,6 +105,7 @@ def run_pileup_analysis(bwa_output_dir, s_name, results_dir):
 		mapped_bases = make_pile_up(bamfile, reference)
 		matched_stx = parse_pileup(mapped_bases, reference)
 		if matched_stx is not None:
+			matched_stx = matched_stx.split('_')[0]
 			outhandle.write('%s\t' % matched_stx)
 	outhandle.write('\n')
 	outhandle.close()
