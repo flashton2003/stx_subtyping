@@ -91,7 +91,7 @@ s_name = get_s_name(contigs)
 blast_output_dir, results_dir = make_output_dirs(output_root)
 blast_xml = '%s/%s.xml' % (blast_output_dir, s_name)
 
-#blast(contigs, ref, blast_xml)
+blast(contigs, ref, blast_xml)
 parse_blast_output(blast_xml, results_dir)
 
 
