@@ -80,7 +80,7 @@ def write_stx_subtyping_scripts(list_file, scripts_dir, fastq_dir, assembly_dir,
 							except:
 								print 'there is no corresponding contigs file \'%s\', naming convention is samplename_contigs.fa' % (contigs)				
 							outhandle = open('%s/%s_stx_subtype.sh' % (scripts_dir, sample_name), 'w')
-							command = '#! /bin/bash\n#$ -o %s/log.stx_subtype.stdout\n#$ -e %s/log.stx_subtype.stderr\n#$ -m e\n#$ -wd /home/philip/scripts\n#$ -N stx_subtype_%s\n. /etc/profile.d/modules.sh\nmodule load bwa/0.7.5a\nmodule load blast+/2.2.27\nmodule load python/2.7.5\nmodule load biopython/python2.7/1.61\nmodule load samtools/0.1.19\nmodule load pysam/python2.7/0.7.5\n\npython %s/stx_subtyping.py %s %s %s %s\n' % (logs_dir, logs_dir, sample_name, stx_pipeline_scripts_dir, R1, R2, contigs, outdir)
+							command = '#! /bin/bash\n#$ -o %s/log.stx_subtype.stdout\n#$ -e %s/log.stx_subtype.stderr\n#$ -m e\n#$ -wd %s\n#$ -N stx_subtype_%s\n. /etc/profile.d/modules.sh\nmodule load bwa/0.7.5a\nmodule load blast+/2.2.27\nmodule load python/2.7.5\nmodule load biopython/python2.7/1.61\nmodule load samtools/0.1.19\nmodule load pysam/python2.7/0.7.5\n\npython %s/stx_subtyping.py %s %s %s %s\n' % (logs_dir, logs_dir, home, sample_name, stx_pipeline_scripts_dir, R1, R2, contigs, outdir)
 							outhandle.write(command)
 							outhandle.close()
 
