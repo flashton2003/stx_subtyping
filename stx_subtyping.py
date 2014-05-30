@@ -1,6 +1,6 @@
 #################################### imports ####################################
 
-import sys, os
+import sys, os, pysam
 from os import system
 from datetime import datetime
 
