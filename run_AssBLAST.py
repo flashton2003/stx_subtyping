@@ -12,7 +12,7 @@ from datetime import datetime
 
 def usage():
 	print '\nthis script blasts assembled contigs against a reference and parses output\n'
-	print 'Usage: <path/to/fastq_read1> <path/to/fastq_read2> <path/to/contigs.fa> <output_root>'
+	print 'Usage: <path/to/contigs.fa> <output_root> <ref>'
 	sys.exit()
 
 def get_opts():

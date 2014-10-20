@@ -36,7 +36,7 @@ def get_opts():
 
 def usage():
 	print "\nScript to run stx_subtyping and on a directory of paired fastqs and a directory of contigs\nWrites and qsubs a bunch of shell scripts to ~/scripts/velvet_scripts\nThe path to the contigs and the fastqs has to be the absolute path, the list can be relative.\n"
-	print 'Usage: <list> <fastq_dir - can be .gz> <assembly_dir - flat dir of _contigs.fasta files> <out dir, where do you want your assemblies>'
+	print 'Usage: <list> <fastq_dir - can be .gz> <assembly_dir - flat dir of _contigs.fa files> <out dir, where do you want your assemblies>'
 	sys.exit()
 
 def make_output_dir(outdir):

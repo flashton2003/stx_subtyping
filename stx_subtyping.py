@@ -41,7 +41,6 @@ def run_MapSNP(fastq_read1, fastq_read2, output_root):
 	print '###  Running MapSNP workflow...' + str(datetime.time(datetime.now())).split('.')[0]
 	system ('python %s/run_MapSNP.py %s %s %s %s' % (scripts_dir, fastq_read1, fastq_read2, output_root, ref))
 	
-
 def run_AssBLAST(contigs, output_root):
 	scripts_dir = get_scripts_dir()
 	ref = get_ref_fasta()
@@ -52,8 +51,6 @@ def run_AssBLAST(contigs, output_root):
 
 
 #################################### main ####################################
-
-
 
 fastq_read1, fastq_read2, contigs, output_root = get_opts()
 make_output_dir(output_root)
