@@ -38,11 +38,7 @@ def make_output_dirs(output_root):
 def map_to_stx(ref, fastq_read1, fastq_read2, bwa_output_dir, s_name):
 	print '######  Running bwa...' + str(datetime.time(datetime.now())).split('.')[0]
 	# check that is bwa isn't found, it returns a sensible error, when it is being run by shell script
-	#system ('/usr/local/bwa/bwa aln %s %s > %s/%s.1.sai' % (ref, fastq_read1, bwa_output_dir, s_name))
-	#system ('/usr/local/bwa/bwa aln %s %s > %s/%s.2.sai' % (ref, fastq_read2, bwa_output_dir, s_name))
-	#system ('/usr/local/bwa/bwa sampe %s %s/%s.1.sai %s/%s.2.sai %s %s > %s/%s.sam' % (ref, bwa_output_dir, s_name, bwa_output_dir, s_name, fastq_read1, fastq_read2, bwa_output_dir, s_name))
-
-	system ('/usr/local/bwa-0.7.4/bwa mem -v 0 %s %s %s > %s/%s.sam' % (ref, fastq_read1, fastq_read2, bwa_output_dir, s_name))
+	system ('bwa mem %s %s %s > %s/%s.sam' % (ref, fastq_read1, fastq_read2, bwa_output_dir, s_name))
 
 def sam_to_bam(bwa_output_dir, s_name):
 	print '######  Running sam_to_bam...' + str(datetime.time(datetime.now())).split('.')[0]

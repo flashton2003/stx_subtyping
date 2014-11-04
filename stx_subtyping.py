@@ -1,6 +1,6 @@
 #################################### imports ####################################
 
-import sys, os
+import sys, os, pysam
 from os import system
 from datetime import datetime
 
@@ -9,7 +9,7 @@ from datetime import datetime
 #################################### functions ####################################
 
 def usage():
-	print '\nPipeline to subtype stx genes from assembly fasta and fastq. This script will subtype a single strain, it is expected that for high throughput useage a command line loop or shell script will be used to call this script. Put about naming conventions of input files. Put about expected naming convention i.e. sample_name.<R>1.fastq\n'
+	print '\nPipeline to subtype stx genes from assembly fasta and fastq. This script will subtype a single strain, it is expected that for high throughput useage a command line loop or shell script will be used to call this script. Expected naming convention is sample_name.1/2.fastq\n'
 	print 'Usage: <path/to/fastq_read1> <path/to/fastq_read2> <path/to/contigs.fa> <output_root - default to pwd>'
 	sys.exit()
 
@@ -41,7 +41,6 @@ def run_MapSNP(fastq_read1, fastq_read2, output_root):
 	print '###  Running MapSNP workflow...' + str(datetime.time(datetime.now())).split('.')[0]
 	system ('python %s/run_MapSNP.py %s %s %s %s' % (scripts_dir, fastq_read1, fastq_read2, output_root, ref))
 	
-
 def run_AssBLAST(contigs, output_root):
 	scripts_dir = get_scripts_dir()
 	ref = get_ref_fasta()
@@ -52,8 +51,6 @@ def run_AssBLAST(contigs, output_root):
 
 
 #################################### main ####################################
-
-
 
 fastq_read1, fastq_read2, contigs, output_root = get_opts()
 make_output_dir(output_root)
