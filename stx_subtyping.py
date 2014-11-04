@@ -9,7 +9,7 @@ from datetime import datetime
 #################################### functions ####################################
 
 def usage():
-	print '\nPipeline to subtype stx genes from assembly fasta and fastq. This script will subtype a single strain, it is expected that for high throughput useage a command line loop or shell script will be used to call this script. Put about naming conventions of input files. Put about expected naming convention i.e. sample_name.<R>1.fastq\n'
+	print '\nPipeline to subtype stx genes from assembly fasta and fastq. This script will subtype a single strain, it is expected that for high throughput useage a command line loop or shell script will be used to call this script. Expected naming convention is sample_name.1/2.fastq\n'
 	print 'Usage: <path/to/fastq_read1> <path/to/fastq_read2> <path/to/contigs.fa> <output_root - default to pwd>'
 	sys.exit()
 
