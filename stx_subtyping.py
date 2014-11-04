@@ -57,5 +57,5 @@ def run_AssBLAST(contigs, output_root):
 
 fastq_read1, fastq_read2, contigs, output_root = get_opts()
 make_output_dir(output_root)
-run_MapSNP(fastq_read1, fastq_read2, output_root)
+#run_MapSNP(fastq_read1, fastq_read2, output_root)
 run_AssBLAST(contigs, output_root)
