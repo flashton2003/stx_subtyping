@@ -1,7 +1,5 @@
 ### stx_subtyping: a tool for subtyping shiga toxin genes from fastqs or fastas.
 
-**Instructions**
-
 **Installation**
 
 git clone https://github.com/flashton2003/stx_subtyping
