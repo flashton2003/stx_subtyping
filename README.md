@@ -29,4 +29,4 @@ assblast_only - Use this when you only have contigs
 
 mapsnp_only - Use this when you only have fastqs, no assemblies
 
-
+If in doubt, try -h
