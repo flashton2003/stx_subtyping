@@ -23,8 +23,10 @@ python /path/to/script/stx_subtyping.py dual_stx_subtyping /path/to/fastq1.fastq
 
 There are 3 running options. The best approach is dual_stx_subtyping, but if only fastqs or fastas are available, the other options can be used.
 
-dual_stx_subtyping - Takes a pair of fastqs and a set of contigs for a strain, outputs info into output_dir
+dual\_stx\_subtyping - Takes a pair of fastqs and a set of contigs for a strain, outputs info into output_dir
+
 assblast_only - Use this when you only have contigs
+
 mapsnp_only - Use this when you only have fastqs, no assemblies
 
 
