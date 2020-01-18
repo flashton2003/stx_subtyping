@@ -14,7 +14,12 @@ Need to have bwa installed and available in your PATH (i.e. when you type `bwa` 
 Tested with python v2.7.6
 Tested with Mac OS X 10.9
 
-**Useage**
+
+```
+conda create -n stx_subtyping python=2.7 bwa biopython pysam samtools=1.1
+```
+
+**Usage**
 
 python /path/to/script/stx_subtyping.py -h
 python /path/to/script/stx_subtyping.py dual_stx_subtyping -h
